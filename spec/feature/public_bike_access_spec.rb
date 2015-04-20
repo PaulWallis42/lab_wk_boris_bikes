@@ -4,6 +4,7 @@ require 'capybara/rspec'
 feature 'member of public accesses bike' do
   scenario 'docking station releases a bike that is not broken' do
     docking_station = DockingStation.new
+    docking_station.capacity = 20
     docking_station.dock Bike.new
     bike = docking_station.release_bike
     expect(bike).not_to be_broken
