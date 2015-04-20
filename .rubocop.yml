@@ -2,3 +2,5 @@ Documentation:
   Enabled: false
 Style/MethodDefParentheses:
   Enabled: false
+Metrics/LineLength:
+ Max: 110
