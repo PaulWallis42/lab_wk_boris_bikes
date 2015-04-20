@@ -26,4 +26,10 @@ describe DockingStation do
     subject.capacity = 21
     expect { subject.dock double :bike }.not_to raise_error
   end
+  it 'does not release broken bikes' do
+    broken_bike = double :bike, broken?: true
+    subject.capacity = 20
+    subject.dock broken_bike
+    expect { subject.release_bike }.to raise_error 'No Bikes Available'
+  end
 end
