@@ -1,7 +1,7 @@
 require_relative 'bike'
 
 class DockingStation
-  attr_writer :capacity
+  attr_writer :capacity, :bikes
 
   def initialize
     @bikes = []
